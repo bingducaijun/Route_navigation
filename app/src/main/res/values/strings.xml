@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Route_navigation</string>
+    <!--SpeechInputActivity 语音输入提示-->
+    <string name="input_hint_prepare">请说出您的目的地</string>
+    <string name="input_hint_network_error">网络异常</string>
+    <string name="input_hint_fail">不能识别</string>
+    <string name="location_fail">定位失败！</string>
+    <string name="search_fail">检索失败</string>
+</resources>
