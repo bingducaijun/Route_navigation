@@ -15,6 +15,7 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.CameraPosition;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MarkerOptions;
+import com.amap.api.navi.model.NaviLatLng;
 import com.mstarc.plus.route_navigation.api.UpdateMapListenter;
 import com.mstarc.plus.route_navigation.base.MyApp;
 import com.mstarc.plus.route_navigation.util.LocationUtil;
@@ -74,7 +75,7 @@ public class MainActivity extends Activity implements UpdateMapListenter
 			locationUtil.startLocation(MainActivity.this);
 			break;
 		case R.id.btn_speech_input:
-			startActivity(new Intent(MainActivity.this, SpeechInputActivity.class));
+			startActivity(new Intent(MainActivity.this, SpeachActivity.class));
 			break;
 		}
 	}
@@ -138,13 +139,16 @@ public class MainActivity extends Activity implements UpdateMapListenter
 	public void update(AMapLocation loc)
 	{
 		LatLng currLocation = new LatLng(loc.getLatitude(), loc.getLongitude());
+		NaviLatLng currLocationN = new NaviLatLng(loc.getLatitude(), loc.getLongitude());
+
 		((MyApp) getApplicationContext()).currCity = loc.getCity();
-		((MyApp) getApplicationContext()).currLocation = currLocation;
+		((MyApp) getApplicationContext()).currLocation = currLocationN;
 		changeLocationCenter(currLocation);
 	}
 
 	@Override
-	public void fail() {
-		Toast.makeText(this,R.string.location_fail,Toast.LENGTH_SHORT).show();
+	public void fail()
+	{
+		Toast.makeText(this, R.string.location_fail, Toast.LENGTH_SHORT).show();
 	}
 }

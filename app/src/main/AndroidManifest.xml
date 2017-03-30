@@ -45,9 +45,18 @@
 
         <service android:name="com.amap.api.location.APSService"/>
 
-        <activity android:name=".SpeechInputActivity">
+        <activity android:name=".SearchActivity">
         </activity>
-
+        <activity android:name=".NavigationActivity">
+        </activity>
+        <activity android:name=".SpeachActivity">
+        </activity>
+        <activity android:name=".RouteSelectActivity">
+        </activity>
+        <activity android:name=".WalkRouteCalculateActivity">
+        </activity>
+        <activity android:name=".SingleRouteCalculateActivity">
+        </activity>
     </application>
 
 </manifest>
